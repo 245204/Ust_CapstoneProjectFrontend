@@ -1,0 +1,65 @@
+.music-add{
+    background-color: rgb(7,11,30);
+     /* height: 100vh; */
+     
+}
+/* .music-sub{
+    /* display: flex;
+    flex-direction: column; 
+
+    } */ 
+
+    .music-sub a{
+        margin-left: 26px;
+        
+    }
+.music-sub h2{
+ color: blue;
+ margin-left: 2em;
+}
+/* .form-group{
+    background-color: rgb(111, 99, 99); */
+   
+
+
+.form-group label{
+   color: rgb(255, 0, 200);
+   margin-left: 20px;
+}
+.form-control{
+    margin-left: 20px;
+    width: 50vw;
+    height: 5vh;
+}
+
+.music-container{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: 5em;
+}
+
+.was-validated{
+    width: 60rem;
+    padding: 5px;
+    
+ 
+}
+.invalid-feedback,.valid-feedback{
+    margin-left: 20px;
+}
+.form-container{
+    background-color: rgb(255, 255, 255);
+  
+}
+.btn-btn-success{
+   
+    padding-block: 8px;
+    padding-inline: 17px;
+    border-radius: 10px;
+    margin-block: 8px;
+    margin-left: 17px;
+    background-color: blueviolet;
+}
+.btn-btn-success:hover{
+    background-color: darkblue;
+}

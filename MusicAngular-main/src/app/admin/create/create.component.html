@@ -1,0 +1,105 @@
+<div class="music-add">
+    <app-header></app-header>
+    <div class="music-sub">
+        <a routerLink="/adminhome" routerLinkActive="active"
+        ><i class="bi bi-chevron-left"></i></a
+      >
+<h2>Save new Music Entry</h2>
+<div class="music-container">
+  
+<form class="was-validated">
+    <div class="form-container">
+    <div class="form-group">
+        <label for = "">Music Title</label>
+        <input type = "text" class="form-control" id="musicName"
+        [(ngModel)]="admin.musicName" name="musicName" required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    
+
+    <div class="form-group">
+        <label for = "" >Artist</label>
+        <input type = "text" class="form-control" id="musicArtist"
+        [(ngModel)]="admin.artistName" name="musicArtist" required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "">Genre</label>
+        <input type = "text" class="form-control" id="musicGenre"
+        [(ngModel)]="admin.musicGenre" name="musicGenre" required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Release Year</label>
+        <input type = "text" class="form-control" id="songReleaseDate"
+        [(ngModel)]="admin.songReleaseDate" name="songReleaseDate"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Song language</label>
+        <input type = "text" class="form-control" id="songLanguage"
+        [(ngModel)]="admin.songLanguage" name="songLanguage"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Duration</label>
+        <input type = "number" class="form-control" id="duration"
+        [(ngModel)]="admin.duration" name="duration"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Country</label>
+        <input type = "text" class="form-control" id="country"
+        [(ngModel)]="admin.country" name="country"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Overall Rating</label>
+        <input type = "number" class="form-control" id="overallRate"
+        [(ngModel)]="admin.overallRate" name="overallRate"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Input Image</label>
+        <input type = "file" class="form-control" id="file"
+         name="file" (change)="onChangeFile($event)"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+
+    <div class="form-group">
+        <label for = "" class="form-label">Input Audio File</label>
+        <input type = "file" class="form-control" id="file"
+         name="file" (change)="onChangeFile($event)"required>
+        <div class="valid-feedback">Valid.</div>
+    <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    
+
+    
+    
+   
+     <button class="btn btn-success" (click)="saveMusic()" routerLink="/retrieve" type="submit">Submit</button> 
+
+
+</div>
+</form>
+
+</div>
+</div>
+</div>

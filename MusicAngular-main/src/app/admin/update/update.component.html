@@ -1,0 +1,37 @@
+<div>
+    <div *ngIf="admin">
+        <h3>Music Details</h3>
+        <form >
+          <div class="form-group">
+          <input type="hidden" [(ngModel)]="admin.musicId" name="musicId"> 
+          
+          <label for="nameInput">Name:</label>
+          <input class="form-control" type="text" [(ngModel)]="admin.musicName" name="musicName" required><br>
+  
+          <label for="artistInput">Artist</label>
+          <input class="form-control" type="text" [(ngModel)]="admin.artistName" name="musicArtist" required><br>
+  
+          <label for="genreInput">Genre</label>
+          <input class="form-control" type="text" [(ngModel)]="admin.musicGenre" name="musicGenre" required><br>
+  
+          <label for="yearInput">Year</label>
+          <input class="form-control" type="number" [(ngModel)]="admin.songReleaseDate" name="songRelaseDate" required><br>
+  
+          <label for="languageInput">Language</label>
+          <input class="form-control" type="text" [(ngModel)]="admin.songLanguage" name="songLanguage" required><br>
+          
+          <label for="yearInput">Country</label>
+          <input class="form-control" type="text" [(ngModel)]="admin.country" name="country" required><br>
+  
+          <label for="durationInput">Duration</label>
+          <input class="form-control" type="number" [(ngModel)]="admin.duration" name="duration" required><br>
+  
+          <label for="overallrateInput">OverallRate</label>
+          <input class="form-control" type="number" [(ngModel)]="admin.overallRate" name="overallRate" required><br>
+    
+  
+          <button class="btn btn-success" (click)="saveUpdatedMusic()"type="submit">Update Music</button>
+        </div> 
+      </form>
+    </div>
+      

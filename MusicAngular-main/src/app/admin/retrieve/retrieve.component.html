@@ -1,0 +1,48 @@
+<!-- <a [routerLink]="['/create']" class="btn btn-primary" >Create</a> -->
+
+<div class="retrieve-main">
+    <app-header></app-header>
+    <div class="retrieve-sub">
+        <a routerLink="/create" routerLinkActive="active"
+          ><i class="bi bi-chevron-left"></i></a
+        >
+    <h2>Current DataBase of Harmony Hub</h2>
+    <div class="table-container">
+        <table border="2" class="table-table-bordered">
+            <thead>
+                <th>MusicId</th>
+                <th>MusicName</th>
+                <th>MusicArtist</th>
+                <th>MusicGenre</th>
+                <th>Year</th>
+                <th>Language</th>
+                <th>Duration</th>
+                <th>Country</th>
+                <th>OverallRate</th>
+                <th>Update/Delete</th>
+            </thead>
+            <tr *ngFor="let admin of admin">
+                <td class="column">{{admin.musicId}}</td>
+                <td class="column">{{admin.musicName}}</td>
+                <td class="column">{{admin.artistName}}</td>
+                <td class="column">{{admin.musicGenre}}</td>
+                <td class="column">{{admin.songReleaseDate}}</td>
+                <td class="column">{{admin.songLanguage}}</td>
+                <td class="column">{{admin.duration}}</td>
+                <td class="column">{{admin.country}}</td>
+                <td class="column">{{admin.overallRate}}</td>
+                <td>
+                    <a [routerLink]="['/update/',admin.musicId]" class="btn btn-primary">Update</a> 
+                    <button *ngIf="admin.musicId !== undefined" (click)="deleteMusic(admin.musicId)" class="btn btn-danger m-1">Delete</button>
+                </td> 
+            </tr>
+        </table>
+    </div>
+    
+</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,59 @@
+.profile-main{
+    background-color: rgb(7,11,30);
+    height: 100vh;
+    
+}
+.side{
+    position: fixed;
+    top: 10;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: rgb(7,11,30);
+    color: #fff;
+}
+
+.side ul li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    list-style-type: none;
+  }
+.side ul li a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 8px;
+  }
+
+ .profile-sub{
+    background-color: aliceblue;
+    height: 75vh;
+    padding: 10px;
+    width: 90vw;
+    margin-left: 5em;
+}
+
+.content {
+    padding: 10px;
+    height: 70vh;
+    justify-content: center;
+}
+
+.content ul li{
+    font-size: 10em;
+    justify-content: center;
+    margin-left: 600px;
+    list-style: none;
+    
+} 
+
+ h2{
+    justify-content: center;
+    margin-left: 12em;
+}
+
+
+
+
+

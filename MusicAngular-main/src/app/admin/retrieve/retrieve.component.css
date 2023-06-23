@@ -1,0 +1,39 @@
+.retrieve-main{
+    background-color: rgb(7,11,30);
+    height: 100vh;
+}
+.retrieve-sub{
+    display:flex;
+    flex-direction: column;
+}
+.retrieve-sub a{
+    margin-left: 26px;
+    
+}
+.retrieve-sub h2{
+    color: blue;
+    margin-left: 20px;
+}
+.table-container{
+    margin-top: 20px;
+    height: 34em;
+    background-color: white;
+    padding-block: 15px;
+    margin-inline: 20px;
+   
+}
+.table-table-bordered{
+    margin-inline: 20px;
+    margin-left: 200px;
+}
+
+.column {
+    padding: 20px; /* Adjust the padding value as needed */
+    
+}
+
+.table-table-bordered {
+    border-collapse: separate;
+    border-spacing: 10px; /* Adjust the spacing value as needed */
+}
+

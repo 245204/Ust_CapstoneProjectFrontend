@@ -1,0 +1,49 @@
+
+
+  .login{
+    background-color: rgb(7,11,30);
+    height: 100vh;
+  }
+
+
+
+.login-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 27rem;
+}
+
+img{
+  object-fit: contain;
+  height: 27rem;
+}
+.sub-container
+{
+  background-color: white;
+  padding-inline: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+
+}
+
+h2{
+  margin-bottom: 37px;
+}
+
+button{
+  background-color: blueviolet;
+  border: none;
+  padding-block: 13px;
+  padding-inline: 30px;
+  border-radius: 12px;
+  margin-block: 12px;
+}
+ button:hover{
+   background-color: orange;
+ }
+
+.new a{
+  text-decoration: none;
+}

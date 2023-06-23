@@ -1,0 +1,80 @@
+<!-- <div class="signup">
+  <app-header></app-header>
+ <div class="sign-main">
+    
+       <div class="sign-b">
+      <div class="signup-form">
+        <h2>Register</h2>
+        <form #signupForm="ngForm" (ngSubmit)="signup()">
+          <div class="form-group-s">
+            <label>Username</label>
+            <input type="email" id="username" class="form-control" name="username" [(ngModel)]="loginSignUp1.username" required >
+          </div>
+          <div class="form-group-s">
+            <label>FirstName</label>
+            <input type="text" id="FirstName" class="form-control" name="FirstName" [(ngModel)]="loginSignUp1.firstname" required >
+          </div>
+          <div class="form-group-s">
+            <label>LastName</label>
+            <input type="text" id="LastName" class="form-control" name="LastName" [(ngModel)]="loginSignUp1.lastname" required >
+          </div>
+          <!-- <div class="form-group-s">
+            <label>Email</label>
+            <input type="email" id="email" class="form-control" name="email" [(ngModel)]="email" required >
+          </div> 
+          <div class="form-group-s">
+            <label>Password</label>
+            <input type="password" id="password" class="form-control" name="password" [(ngModel)]="loginSignUp1.password" required>
+          </div>
+          <button type="submit"a routerLink="/login">Submit</button>
+        </form>
+      </div>
+      <div class="sign-img">
+        <img src="..\assets\signup\signback.jpg">
+      </div>
+
+    </div>
+
+    
+  </div>
+
+</div>
+ -->
+ <div class="signup">
+  <app-header></app-header>
+  <div class="sign-main">
+    <div class="sign-b">
+      <div class="signup-form">
+        <h2>Register</h2>
+        <form #signupForm="ngForm" (ngSubmit)="signup()">
+          <div class="form-group">
+            <label for="username">Email</label>
+            <input type="email" id="username" class="form-control" name="username" [(ngModel)]="loginSignUp1.username" required>
+          </div>
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" class="form-control" name="firstName" [(ngModel)]="loginSignUp1.firstname" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" class="form-control" name="lastName" [(ngModel)]="loginSignUp1.lastname" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" name="password" [(ngModel)]="loginSignUp1.password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" name="password" [(ngModel)]="loginSignUp1.conpassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="sign-img">
+        <img src="../assets/signup/signback.jpg" alt="Signup Image">
+      </div>
+    </div>
+  </div>
+</div>
+

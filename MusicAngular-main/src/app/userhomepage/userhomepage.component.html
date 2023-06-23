@@ -1,0 +1,108 @@
+<div class="wrapper">
+  <div class="sidebar">
+    <app-header></app-header>
+
+    <ul class="list-unstyled">
+      <li>
+        <a routerLink="/login" routerLinkActive="active"
+          ><i class="bi bi-house-door-fill"></i>Home</a
+        >
+      </li>
+
+      <li>
+        <a routerLink="/profile" routerLinkActive="active"
+          ><i class="bi bi-person"></i>Profile</a
+        >
+      </li>
+
+      <li>
+        <a routerLink="/login" routerLinkActive="active"
+          ><i class="bi bi-box-arrow-right"></i>Logout</a
+        >
+      </li>
+
+      <!-- <li>
+        <a routerLink="/login" routerLinkActive="active"
+          ><i class="fas fa-songs"></i>Songs</a
+        >
+      </li> -->
+    </ul>
+  </div>
+ 
+
+  <div class="main-content">
+    <ul class="nav justify-content-between header">
+      <li class="nav-item">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Search for Song"
+          name="" [(ngModel)]="searchQuery" (input)="search()"
+        />
+        <button class="search-button" (click)="search()">Search</button>
+      </li>
+    </ul>
+<br>
+<br>
+<br>
+    <div class="runningimages">
+    </div>
+
+    <div class="info">
+      <div class="image-container">
+        <img src="..\assets\userpage\img1.jpg" alt="Image 1" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\calmdown.jpg" alt="Image 3" />
+      </div>
+
+      <div class="image-container">
+        <img src="..\assets\userpage\faded.jpg" alt="Image 2" />
+      </div>
+
+      <div class="image-container">
+        <img src="..\assets\userpage\nc.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\diamonds.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\marsh.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\sia.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\dusk.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\ariana.jpg" alt="Image 3" />
+      </div>
+      <div class="image-container">
+        <img src="..\assets\userpage\talkanymore.jpg" alt="Image 3" />
+      </div>
+      <div class="music-bar">
+        <div class="mus-sub">
+     
+       <div class="buttons">
+       <button class="btn btn-dark play-btn"> <i class="bi bi-skip-start"></i></button>
+       <button class="btn btn-dark play-btn"><i class="fas fa-play"></i></button>
+       <button class="btn btn-dark play-btn"> <i class="fas fa-pause"></i></button>
+       <button class="btn btn-dark play-btn"><i class="bi bi-skip-end"></i></button>
+      </div> 
+        <div class="rating-stars">
+         <!-- <button class="star-filled"><i class="bi bi-star"></i></button> -->
+         <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-star"></i>
+       </div>
+
+    </div>
+  </div>
+
+  <div class="footer-main">
+     
+</div>
+</div>

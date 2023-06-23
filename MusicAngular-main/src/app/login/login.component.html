@@ -1,0 +1,148 @@
+
+<div class="login">
+  <app-header></app-header>
+  <div class="login-container">
+    <div class="sub-container"><form [formGroup]="loginForm" (ngSubmit)="login()">
+
+
+
+  <h2>Login</h2>
+
+  <!-- Username input -->
+  <div class="form-group">
+    <label class="form-label" for="username">Email</label>
+    <input type="email" id="username" name="username" class="form-control "
+      placeholder="Enter email" formControlName="username" required username />
+  </div>
+
+
+
+
+  <!-- Password input -->
+  <div class="form-group">
+    <label class="form-label" for="password">Password</label>
+    <input type="password" id="password" name="password" class="form-control"
+      placeholder="Enter password" formControlName="password" required minlength="6" />
+  </div>
+  
+
+
+  <!-- <div class="text-center text-lg-start mt-4 pt-2">
+    <button type="submit" class="btn btn-primary btn-lg"
+      style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+    <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account?<button type="button" class="btn btn-danger" routerLink="/signup">Register</button></p>
+  </div> -->
+
+
+  
+  <div class="form-group">
+    <button type="submit" class="btn-btn" (click)="login()">
+      Log in
+    </button>
+    <p class="new">
+      <a routerLink="/signup">New Member? Sign Up Now</a>
+    </p>
+  </div>
+  
+</form>  
+<div class="img-container">
+  <img src="/assets/Loginimage.jpg" alt="">
+</div>  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <!-- <div class="login">
+        <app-header></app-header>
+        <div class="login-container">
+          <div class="sub-container">
+      
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <h1>User Login</h1>
+          <br>
+          <!-- Username input 
+          <div class="form-outline mb-4">
+            <label class="form-label" for="username">Username</label>
+            <input type="text" id="username" class="form-control form-control-lg"
+              placeholder="Enter your username" formControlName="username" />
+              <div
+              *ngIf="
+                loginForm.controls['email'].invalid &&
+                (loginForm.controls['email'].dirty ||
+                  loginForm.controls['email'].touched)
+              "
+              class="text-danger"
+            >
+              <div *ngIf="loginForm.controls['email'].errors?.['required']">
+                Email is required.
+              </div>
+              <div *ngIf="loginForm.controls['email'].errors?.['email']">
+                Invalid email format.
+              </div>
+            </div>
+          </div>
+
+          <!-- Password input 
+          <div class="form-outline mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" class="form-control form-control-lg"
+              placeholder="Enter password" formControlName="password" required
+              minlength="6"/>
+          </div><div
+          *ngIf="
+            loginForm.controls['password'].invalid &&
+            (loginForm.controls['password'].dirty ||
+              loginForm.controls['password'].touched)
+          "
+          class="text-danger"
+        >
+          <div *ngIf="loginForm.controls['password'].errors?.['required']">
+            Password is required.
+          </div>
+          <div *ngIf="loginForm.controls['password'].errors?.['minlength']">
+            Password must be at least 6 characters long.
+          </div>
+        </div>
+      <!-- </div> 
+      <div class="form-group">
+        <button type="submit" class="btn-btn" (click)="login()">
+          Log in
+        </button>
+        <p class="new">
+          <a routerLink="/signup">New Member? Sign Up Now</a>
+        </p>
+      </div>
+        </form>
+      </div>
+      <div class="img-container">
+        <img src="/assets/Loginimage.jpg" alt="">
+      </div> -->
