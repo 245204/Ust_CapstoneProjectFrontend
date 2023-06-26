@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { UserService } from '../services/user.service';
+import { Admin } from '../admin/model/Admin';
+import { FormGroup } from '@angular/forms';
+
+
 interface Music {
   title: string;
   artist: string;
@@ -10,30 +15,68 @@ interface Music {
   templateUrl: './userhomepage.component.html',
   styleUrls: ['./userhomepage.component.css']
 })
-export class UserhomepageComponent {
-  musicList: Music[] = [
-    { title: 'Song 1', artist: 'Artist 1', album: 'Album 1' },
-    { title: 'Song 2', artist: 'Artist 2', album: 'Album 2' },
-    { title: 'Song 3', artist: 'Artist 3', album: 'Album 3' },
-    { title: 'Song 4', artist: 'Artist 4', album: 'Album 4' },
-    { title: 'Song 5', artist: 'Artist 5', album: 'Album 5' }
-  ];
-  searchQuery: string = '';
-  filteredMusicData:any[]|undefined;
-  
-  
-  search() {
-  //   if(this.searchQuery){
-  //     this.filteredMusicData=this.
-    }
-  
+export class UserhomepageComponent implements OnInit{
+  filteredAdmin!: Admin[];
 
-  viewSong(song: Music) {
-    // Perform logic to view the song details
+  constructor(private userService:UserService){}
+  searchQuery: any;
+  admin: Admin[] = [];
+  myform!: FormGroup;
+  // filteredUser: Admin[] = [];
+  searchTerm: string = '';
+  selectedMusic: Admin|null=null;
+  showModal: boolean = false;
+
+  ngOnInit(): void {
+    this.getMusicAll();
+  }
+  getMusicAll() {
+    this.userService.getAll().subscribe(data =>{
+      this.admin=data;
+
+    });
+  }
+  
+  openModal(music: Admin) {
+    console.log('Open modal called');
+    this.selectedMusic = music;
+    this.showModal = true;
+  }
+  closeModal() {
+    this.selectedMusic = null;
+    this.showModal = false;
+  }
+  musicDetails(music:Admin){
+    this.myform.patchValue({
+      musicName: music.musicName,
+      artistName: music.artistName,
+      musicId: music.musicId,
+      songReleasDate:music.songReleaseDate,
+      songLanguage:music.songLanguage,
+      duration:music.duration,
+      country:music.country,
+      musicImage:music.musicImages,
+      overallRate:music.overallRate
+      
+    });
+    console.log(music.musicName);
   }
 
   rateSong(song: Music) {
     // Perform logic to rate the song
   }
+  filter(): void {
+    console.log("working function");
+    if (this.searchTerm.trim() !== '') {
+      this.filteredAdmin = this.admin.filter(item =>
+        (item.musicName && item.musicName.toLowerCase().includes(this.searchTerm.toLowerCase())) ||
+        (item.artistName && item.artistName.toLowerCase().includes(this.searchTerm.toLowerCase()))
+      );
+    } else {
+      this.filteredAdmin = this.admin;
+    }
+  }
+  
+  
 
 }

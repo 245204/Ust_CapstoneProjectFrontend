@@ -33,54 +33,69 @@
   <div class="main-content">
     <ul class="nav justify-content-between header">
       <li class="nav-item">
-        <input
-          class="form-control"
-          type="search"
-          placeholder="Search for Song"
-          name="" [(ngModel)]="searchQuery" (input)="search()"
-        />
-        <button class="search-button" (click)="search()">Search</button>
+
       </li>
     </ul>
 <br>
-<br>
-<br>
+
     <div class="runningimages">
     </div>
+    <br>
+    <br>
+    <div class="search-container">
+   
+        <input type="text" [(ngModel)]="searchTerm" (input)="filter()" placeholder="Search...">
+      <!-- <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." (ngModelChange)="filterAdmin()"> -->
+    </div>
+    <br>
 
-    <div class="info">
-      <div class="image-container">
-        <img src="..\assets\userpage\img1.jpg" alt="Image 1" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\calmdown.jpg" alt="Image 3" />
-      </div>
 
-      <div class="image-container">
-        <img src="..\assets\userpage\faded.jpg" alt="Image 2" />
+    <div class="row">
+      <div class="col-lg-4 mb-4" *ngFor="let music of admin">
+        <div class="card">
+          <!-- <img class="card-title">{{ music.musicImages }} -->
+          <img src="https://images.unsplash.com/photo-1586368942140-4ff23ba4de29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80" alt="" class="card-img-top imageround"> 
+          <div class="card-body">
+         
+            <h3 class="card-title">{{ music.musicName}}</h3>
+            <h5 class="card-text">Artist:- {{ music.artistName }}</h5>
+            <!-- <p class="card-text">{{ music.musicGenre }}</p>
+            <p class="card-text">{{ music.songReleaseDate }}</p>
+            <p class="card-text">{{ music.songLanguage }}</p>
+            <p class="card-text">{{ music.duration }}</p>
+            <p class="card-text">{{ music.country }}</p>
+            <p class="card-text">{{ music.overallRate }}</p>  -->
+            <button type="button" class="btn btn-outline-success btn-sm"  (click)="openModal(music)">Music Details</button>
+          </div>
+        </div>
       </div>
+    </div>
+    
+    <!-- Add a modal component -->
+    <div class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ selectedMusic?.musicName }}</h5>
+      </div>
+      <div class="modal-body">
+        <p>Artist: {{ selectedMusic?.artistName }}</p>
+        <p>Genre: {{ selectedMusic?.musicGenre }}</p>
+        <p>Year: {{ selectedMusic?.songReleaseDate }}</p>
+        <p>Language: {{ selectedMusic?.songLanguage }}</p>
+        <p>Duration: {{ selectedMusic?.duration }}</p>
+        <p>Country:{{ selectedMusic?.country}}</p>
+        <p>Overall Rate:{{ selectedMusic?.overallRate}}</p>
+        <!-- Add other music details here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" (click)="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-      <div class="image-container">
-        <img src="..\assets\userpage\nc.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\diamonds.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\marsh.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\sia.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\dusk.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\ariana.jpg" alt="Image 3" />
-      </div>
-      <div class="image-container">
-        <img src="..\assets\userpage\talkanymore.jpg" alt="Image 3" />
-      </div>
+    
       <div class="music-bar">
         <div class="mus-sub">
      
@@ -106,3 +121,6 @@
      
 </div>
 </div>
+
+
+

@@ -81,12 +81,31 @@ margin-left: 10px;
 
 .info {
 
-height: 80vh;
-padding: 10px;
-background-color: #f8f9fa;
-border-radius: 5px;
 
-}
+
+
+  height: 80vh;
+  
+  padding: 10px;
+  
+  background-color: #f8f9fa;
+  
+  border-radius: 5px;
+  
+  display: flex;
+  
+  flex-direction: row;
+  
+  flex-wrap: wrap;
+  
+  justify-content: space-around;
+  
+  
+  }
+  .show {
+    display: block;
+  }
+
 
 .image-container {
   width: 200px;
@@ -115,7 +134,7 @@ img {
   display: flex;
   align-items: center;
   height: 100px;
-  background-color: blueviolet;
+  background-color: rgb(43, 42, 44);
 }
 .mus-sub{
 width: 75em;
@@ -179,34 +198,30 @@ margin-right: 5px;
 } */
 
 
-@keyframes fade{
-
-
-
-0%,25%{
-
-  background-image: url('https://images.unsplash.com/photo-1478737270239-2f02b77fc618?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80')
+@keyframes fade {
+  0%, 20% {
+    background-image: url('https://images.unsplash.com/photo-1520436380237-51bb48b9305f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+  }
+  20%, 40% {
+    background-image: url('https://images.unsplash.com/photo-1511924815008-c73bc9c67aaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1019&q=80');
+  }
+  40%, 60% {
+    background-image: url('https://images.unsplash.com/photo-1580397500354-44dacc7d6334?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80');
+  }
+  60%, 80% {
+    background-image: url('https://plus.unsplash.com/premium_photo-1673601435449-1e96798975ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1880&q=80');
+  }
+  80%, 100% {
+    background-image: url('https://images.unsplash.com/photo-1499415479124-43c32433a620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80');
+  }
 }
 
-25%,50%{
-
-  background-image: url('https://images.unsplash.com/photo-1471614654469-512ee6a4397a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+/* Set the duration of the animation */
+.card{
+  background-color: rgb(18, 17, 17);
+  color: #f8f9fa;
 }
 
-50%,75%{
-
-  background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
- 
-}
-
-75%,100%{
-
-  background-image: url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')
-
-}
-
-
-}
 .runningimages{
 animation: fade 5s infinite;
 
@@ -218,6 +233,101 @@ background-size: cover;
 
 height: 300px;
 }
+
+
+
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #000000;
+  color: white;
+  border-radius: 4px;
+  padding: 20px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Modal Title */
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Modal Body */
+.modal-body {
+  margin-bottom: 20px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Close Button */
+.close {
+  cursor: pointer;
+  font-size: 24px;
+  color: #aaa;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: #555;
+}
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+
+  padding: 10px; /* Add padding to create space around the input */
+}
+
+
+.search-container input {
+  width: 500px;
+  padding: 10px;
+  border: 1px solid #861093;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: black; /* Set the background color to black */
+  color: white; /* Set the text color to white */
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #5b728a;
+}
+
+
+
+
+
+
+
 
 
 

@@ -1,48 +1,45 @@
-<!-- <a [routerLink]="['/create']" class="btn btn-primary" >Create</a> -->
 
-<div class="retrieve-main">
+ <div class="retrieve-main">
     <app-header></app-header>
     <div class="retrieve-sub">
-        <a routerLink="/create" routerLinkActive="active"
-          ><i class="bi bi-chevron-left"></i></a
-        >
-    <h2>Current DataBase of Harmony Hub</h2>
-    <div class="table-container">
+      <a routerLink="/adminhome" routerLinkActive="active">
+        <i class="bi bi-chevron-left purple"></i>
+      </a>
+      <h2>Current DataBase of Harmony Hub</h2>
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search..." (ngModelChange)="filterAdmin()">
+      </div>
+      <div class="table-container">
         <table border="2" class="table-table-bordered">
-            <thead>
-                <th>MusicId</th>
-                <th>MusicName</th>
-                <th>MusicArtist</th>
-                <th>MusicGenre</th>
-                <th>Year</th>
-                <th>Language</th>
-                <th>Duration</th>
-                <th>Country</th>
-                <th>OverallRate</th>
-                <th>Update/Delete</th>
-            </thead>
-            <tr *ngFor="let admin of admin">
-                <td class="column">{{admin.musicId}}</td>
-                <td class="column">{{admin.musicName}}</td>
-                <td class="column">{{admin.artistName}}</td>
-                <td class="column">{{admin.musicGenre}}</td>
-                <td class="column">{{admin.songReleaseDate}}</td>
-                <td class="column">{{admin.songLanguage}}</td>
-                <td class="column">{{admin.duration}}</td>
-                <td class="column">{{admin.country}}</td>
-                <td class="column">{{admin.overallRate}}</td>
-                <td>
-                    <a [routerLink]="['/update/',admin.musicId]" class="btn btn-primary">Update</a> 
-                    <button *ngIf="admin.musicId !== undefined" (click)="deleteMusic(admin.musicId)" class="btn btn-danger m-1">Delete</button>
-                </td> 
-            </tr>
+          <thead>
+            <th>MusicId</th>
+            <th>MusicName</th>
+            <th>MusicArtist</th>
+            <th>MusicGenre</th>
+            <th>Year</th>
+            <th>Language</th>
+            <th>Duration</th>
+            <th>Country</th>
+            <th>OverallRate</th>
+            <th>Update/Delete</th>
+          </thead>
+          <tr *ngFor="let adminItem of filteredAdmin">
+            <td class="column">{{ adminItem.musicId }}</td>
+            <td class="column">{{ adminItem.musicName.toLowerCase() }}</td>
+            <td class="column">{{ adminItem.artistName.toLowerCase() }}</td>
+            <td class="column">{{ adminItem.musicGenre }}</td>
+            <td class="column">{{ adminItem.songReleaseDate }}</td>
+            <td class="column">{{ adminItem.songLanguage }}</td>
+            <td class="column">{{ adminItem.duration }}</td>
+            <td class="column">{{ adminItem.country }}</td>
+            <td class="column">{{ adminItem.overallRate }}</td>
+            <td>
+              <a [routerLink]="['/update/', adminItem.musicId]" class="btn btn-primary">Update</a>
+              <button *ngIf="adminItem.musicId !== undefined" (click)="deleteMusic(adminItem.musicId)" class="btn btn-danger m-1">Delete</button>
+            </td>
+          </tr>
         </table>
+      </div>
     </div>
-    
-</div>
-</div>
-
-
-
-
-
+  </div>
+  

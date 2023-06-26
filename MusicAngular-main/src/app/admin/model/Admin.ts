@@ -1,11 +1,14 @@
+import { FileHandle } from "./file-handle.model";
+
 export class Admin{
-    musicId:number|undefined;
-    musicName:string|undefined;
-    artistName:string|undefined;
-    musicGenre:string|undefined;
+    musicId!: number;
+    musicName!: string;
+    artistName!: string;
+    musicGenre!: string;
     songReleaseDate:string|undefined;
     songLanguage:string|undefined;
     duration:string|undefined;
     country:string|undefined;   
-    overallRate:number|undefined;
+    overallRate!: number;
+     musicImages!: FileHandle[]; 
 }

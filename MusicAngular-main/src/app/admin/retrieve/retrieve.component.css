@@ -1,3 +1,6 @@
+.purple {
+    color: purple;
+  }
 .retrieve-main{
     background-color: rgb(7,11,30);
     height: 100vh;
@@ -11,7 +14,7 @@
     
 }
 .retrieve-sub h2{
-    color: blue;
+    color: rgb(108, 11, 121);
     margin-left: 20px;
 }
 .table-container{
@@ -36,4 +39,21 @@
     border-collapse: separate;
     border-spacing: 10px; /* Adjust the spacing value as needed */
 }
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
+
+  .search-container input {
+    width: 500px; /* Adjust the width value as needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .search-container input:focus {
+    outline: none;
+    border-color: #5b728a;
+  }

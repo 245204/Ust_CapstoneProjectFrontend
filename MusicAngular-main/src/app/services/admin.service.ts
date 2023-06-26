@@ -48,8 +48,8 @@ export class AdminService {
 // }
 
 
-baseurl='http://localhost:8083/api/1.0/admin/get';
-   baseurl1='http://localhost:8083/api/1.0/admin/delete';
+baseurl='http://localhost:9093/api/1.0/admin/get';
+   baseurl1='http://localhost:9093/api/1.0/admin/delete';
   
     constructor(private http: HttpClient) {
   
@@ -59,7 +59,7 @@ baseurl='http://localhost:8083/api/1.0/admin/get';
   // }
   
     getMusics(){
-      return this.http.get<Admin[]>('http://localhost:8083/api/1.0/admin/allmusics');
+      return this.http.get<Admin[]>('http://localhost:9093/api/1.0/admin/allmusics');
     }
     
     getMusicById(id:number){
@@ -71,13 +71,13 @@ baseurl='http://localhost:8083/api/1.0/admin/get';
     saveMusic(admin:Admin):
      Observable<Object>{
       
-     return this.http.post( 'http://localhost:8083/api/1.0/admin/addmusic',admin);
+     return this.http.post( 'http://localhost:9093/api/1.0/admin/addmusic',admin);
      }
   
   
      updateMusic(admin:Admin):
     Observable<Object>{
-       return this.http.put( 'http://localhost:8083/api/1.0/admin/update',admin);
+       return this.http.put( 'http://localhost:9093/api/1.0/admin/update',admin);
       
      }
      deleteMusicbyId(id:number):

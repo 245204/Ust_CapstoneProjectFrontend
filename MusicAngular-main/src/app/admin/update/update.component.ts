@@ -23,16 +23,16 @@ export class UpdateComponent {
   
  
    saveUpdatedMusic(): void {
-     this.adminService.saveMusic(this.admin).subscribe(
+     this.adminService.updateMusic(this.admin).subscribe(
        (data) => {
         this.gotoMusicList();
-        //  console.log('Product updated successfully');
        },
        (error) => {
          console.log('Error updating product:', error);
        }
      );
    }
+    
    gotoMusicList() {
     this.router.navigate(['retrieve']);
   }
